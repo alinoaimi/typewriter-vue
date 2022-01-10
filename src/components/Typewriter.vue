@@ -56,6 +56,10 @@ export default {
           ? `<span>${innerHTML}</span>`
           : innerHTML;
       await this.typewriter(this.$el.innerHTML);
+      
+      // complete emit
+      this.$emit('onComplete');
+      
       if (this.replace.length) {
         setTimeout(() => {
           this.startReplacing();
